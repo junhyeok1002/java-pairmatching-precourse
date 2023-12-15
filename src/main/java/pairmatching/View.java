@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import camp.nextstep.edu.missionutils.Console;
@@ -27,36 +28,22 @@ public class View {
         return names;
     }
 
-    public static Integer SelectMenu() {
+    public static String SelectMenu() {
         System.out.println("기능을 선택하세요.\n" + "1. 페어 매칭\n" + "2. 페어 조회\n" + "3. 페어 초기화\n" + "Q. 종료");
         String input = Console.readLine();
-
-        if (Objects.equals(input, "1")) {
-            System.out.println("페어 매칭");
-            return 0;
-        }
-
-        if (Objects.equals(input, "2")) {
-            System.out.println("페어 조회");
-            return 0;
-        }
-
-        if (Objects.equals(input, "3")) {
-            System.out.println("페어 초기화");
-            return 0;
-        }
-
-        if (Objects.equals(input, "Q")) {
-            System.out.println("종료");
-            return 1;
-        }
-
-        // 나머지의 경우
-        try {
-            throw new IllegalArgumentException("잘못된 입력 값입니다.");
-        } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR] 잘못된 입력 값입니다. 1,2,3,Q 중에서 입력해주십시오.");
-            return SelectMenu();
-        }
+        return input;
+    }
+    public static void pair_maching_print(){
+        System.out.println("\n#############################################\n"
+                + "과정: 백엔드 | 프론트엔드\n"
+                + "미션:\n"
+                + "  - 레벨1: 자동차경주 | 로또 | 숫자야구게임\n"
+                + "  - 레벨2: 장바구니 | 결제 | 지하철노선도\n"
+                + "  - 레벨3: \n"
+                + "  - 레벨4: 성능개선 | 배포\n"
+                + "  - 레벨5: \n"
+                + "############################################\n"
+                + "과정, 레벨, 미션을 선택하세요.\n"
+                + "ex) 백엔드, 레벨1, 자동차경주");
     }
 }
