@@ -46,4 +46,34 @@ public class View {
                 + "과정, 레벨, 미션을 선택하세요.\n"
                 + "ex) 백엔드, 레벨1, 자동차경주");
     }
+
+    public static void pair_maching_result(List<List<String>> resultList){
+        System.out.println("페어 매칭 결과입니다.");
+        // 결과 출력
+        for (List<String> sublist : resultList) {
+            System.out.print(sublist.get(0)+" : "+sublist.get(1));
+
+            if (sublist.size() == 3){
+                System.out.print(" : "+sublist.get(2));
+            }
+            System.out.println();
+        }
+    }
+
+    public static int isRemaching(){
+        System.out.println("매칭 정보가 있습니다. 다시 매칭하시겠습니까?\n" + "네 | 아니오");
+        String input = Console.readLine();
+        if (Objects.equals(input, "네")){
+            return 1;
+        }
+        if (Objects.equals(input, "아니오")){
+            return 0;
+        }
+
+        throw new IllegalArgumentException("네 아니오로만 답해;;");
+    }
+
+    public static void reset_message(){
+        System.out.println("\n초기화 되었습니다.");
+    }
 }
